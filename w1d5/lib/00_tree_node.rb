@@ -40,9 +40,9 @@ class PolyTreeNode
 
     return self if @value == target_value
 
-    @children.each do |child|
-      child_val = child.dfs(target_value)
-      return child_val unless child_val.nil?
+    self.children.each do |child|
+      result = child.dfs(target_value)
+      return result unless result.nil?
     end
 
     nil
@@ -57,12 +57,8 @@ class PolyTreeNode
       end
       return current_node if current_node.value == target_value
     end
-    
+
     nil
   end
 
 end
-
-#node1 = PolyTreeNode.new("node1")
-#node2 = PolyTreeNode.new("node2")
-#node3 = PolyTreeNode.new("node3")
